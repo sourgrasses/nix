@@ -14,6 +14,7 @@ use crate::fcntl::AtFlags;
     netbsdlike,
     target_os = "emscripten",
     target_os = "fuchsia",
+    target_os = "haiku",
     target_os = "hurd",
     target_os = "redox",
 ))]
@@ -1491,6 +1492,7 @@ feature! {
     freebsdlike,
     solarish,
     target_os = "emscripten",
+    target_os = "haiku",
     target_os = "hurd",
     target_os = "redox",
     netbsdlike,
