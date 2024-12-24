@@ -19,6 +19,7 @@ cfg_if! {
         bsd,
         target_os = "android",
         target_os = "aix",
+        target_os = "haiku",
         all(target_os = "linux", not(target_env = "gnu"))
     ))]{
         use libc::rlimit;
@@ -49,6 +50,7 @@ libc_enum! {
             bsd,
             target_os = "android",
             target_os = "aix",
+            target_os = "haiku",
             all(target_os = "linux", not(any(target_env = "gnu", target_env = "uclibc")))
         ), repr(i32))]
     #[non_exhaustive]
@@ -94,6 +96,10 @@ libc_enum! {
         /// A ceiling to which the process's nice value can be raised using
         /// setpriority or nice.
         RLIMIT_NICE,
+
+        #[cfg(target_os = "haiku")]
+        /// The number of open vnode monitors
+        RLIMIT_NOVMON,
 
         #[cfg(any(
             linux_android,

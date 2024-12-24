@@ -89,7 +89,6 @@ feature! {
     target_os = "redox",
     target_os = "fuchsia",
     solarish,
-    target_os = "haiku"
 )))]
 feature! {
     #![feature = "resource"]
